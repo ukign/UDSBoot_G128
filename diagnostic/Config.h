@@ -1,15 +1,6 @@
 #ifndef DIAG_CONFIG_H
 #define DIAG_CONFIG_H
 
-/*
-**EEPROM adress allocation
-**0x13E0-0x13F7:24 bytes not used
-**0x13F8-0x13FD:used by diagnostic of bootloader
-**0x13FC-0x13FD:app valid flag adress
-**0x13FE:not used
-**0x13FF:app program flag adress
-*/
-
 /*app request flag address*/
 #define BOOT_PROGRAM_FLAG_ADDRESS		0x3FFC
 

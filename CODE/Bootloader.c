@@ -196,7 +196,7 @@ void RTI_DIsable(void)
 
 void Prepare_Before_Jump(void)
 {
-    CAN1_Disable();   /*shutdown the MSCAN module*/
+    CAN1_Disable();   
     Cpu_DisableInt(); /*disable the CPU interrupt*/
     MemManger_CleanCodeRam();       /*clean the bootloader used RAM  for NVM driver*/
     RTI_DIsable();    /*disable RTI interrupt*/

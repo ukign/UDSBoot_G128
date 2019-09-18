@@ -233,7 +233,7 @@ void MemManger_SupplierCrc(uint32_t address , uint32_t length)
     }
 }
 
-void MemManger_GeelyCrc(uint32_t address , uint32_t length)
+void MemManger_OEMCrc(uint32_t address , uint32_t length)
 {
     uint32_t i;
     uint32_t temp;
@@ -390,7 +390,7 @@ uint8_t MemManger_Program(uint16_t len,uint8_t* data)
         {
             MemManger_SupplierCrc(addressToBeProgram , len);
         }
-        MemManger_GeelyCrc(addressToBeProgram , len);
+        MemManger_OEMCrc(addressToBeProgram , len);
         m_MemRequest.complete += len;
         return MEM_FINISH;
     }
@@ -597,7 +597,7 @@ void MemManger_Task(void)
                         {
                             MemManger_SupplierCrc(addressToBeProgram , currProgramLen);
                         }
-                        MemManger_GeelyCrc(addressToBeProgram , currProgramLen);
+                        MemManger_OEMCrc(addressToBeProgram , currProgramLen);
                         
                         m_MemProgram.programed += currProgramLen;
                         m_MemRequest.complete += currProgramLen;
@@ -640,7 +640,7 @@ void MemManger_Task(void)
                             {
                                 MemManger_SupplierCrc(addressToBeProgram , currProgramLen);
                             }
-                            MemManger_GeelyCrc(addressToBeProgram , currProgramLen);
+                            MemManger_OEMCrc(addressToBeProgram , currProgramLen);
                             
                             m_MemProgram.programed += currProgramLen;
                             m_MemRequest.complete += currProgramLen;
